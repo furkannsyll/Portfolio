@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Homemade+Apple&family=Lobster&family=Satisfy&display=swap");
+
+:root {
+    --navbar-height: 50px;
+    --bg-main-one: #05445e;
+    --bg-main-two: #02fced;
+}
+
+.bg-main-color {
+    background-color: #05445e;
+}
+
+.header-wrapper {
+    padding: 46px;
+    .logo-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .navbar-toggler {
+        background-image: url("../img/icon/hamburger.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+    .text-wrapper {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+    }
+    .text-wrapper h2 {
+        position: relative;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 4em;
+        letter-spacing: 5px;
+        color: #05445e;
+        text-transform: uppercase;
+        width: 100%;
+        text-align: center;
+        animation: animate 5s linear infinite;
+    }
+    .text-wrapper h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0.7em;
+        pointer-events: none;
+    }
+    .signature-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    .signature {
+        text-align: center;
+        font-family: "Allura", cursive;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 1.7em;
+        color: #ffffff;
+    }
+    @keyframes animate {
+        0%,
+        18%,
+        20%,
+        50.1%,
+        60%,
+        65.1%,
+        80%,
+        90.1%,
+        92% {
+            color: #195c78;
+            box-shadow: none;
+        }
+        18.1%,
+        20.1%,
+        30.1%,
+        50%,
+        60.1%,
+        65%,
+        80.1%,
+        90.1%,
+        92.1%,
+        100% {
+            color: #ffffff;
+            box-shadow: none;
+        }
+    }
+}
+
+.bg-opacity-25 {
+    background: rgba(5, 68, 94, 0.5);
+}
+
+.navbar {
+    @media (min-width: 992px) {
+        height: var(--navbar-height);
+    }
+    padding: 0;
+    @media (max-width: 991.98px) {
+        .navbar-collapse {
+            display: block;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            transform: translateX(-100%);
+            transition: all 300ms;
+            &::before {
+                content: "";
+                background-color: rgba($color: #05445e, $alpha: 0.7);
+                position: absolute;
+                z-index: -1;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .navbar-nav {
+                background-color: #05445e;
+                width: 23%;
+                height: 100%;
+            }
+            &.collapsing,
+            &.show {
+                transform: translateX(0%);
+            }
+        }
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 10 9% 2rem;
+}
+
+.home {
+    background: linear-gradient(90deg, #05445e 50%, #ffffff 50%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    &-content {
+        max-width: 45rem;
+        .text-animate {
+            position: relative;
+            width: 32.8rem;
+        }
+        .text-animate h3 {
+            font-size: 2.7rem;
+            font-weight: 600;
+            color: transparent;
+            -webkit-text-stroke: 0.7px var(--bg-main-two);
+        }
+    }
+    &-content p {
+        font-size: 1.2rem;
+        margin: 2rem 0 4rem;
+    }
+    &-heading {
+        font-size: 3.7rem;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+    .btn-wrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 34.5rem;
+        height: 4rem;
+        .btn-content {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            width: 15rem;
+            height: 100%;
+            background: var(--bg-main-two);
+            border: 0.2rem solid var(--bg-main-two);
+            border-radius: 0.8rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+            color: var(--bg-main-one);
+            z-index: 1;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        .btn-content:hover {
+            color: var(--bg-main-two);
+        }
+        .btn-content:nth-child(2) {
+            background: transparent;
+            color: var(--bg-main-two);
+        }
+        .btn-content:nth-child(2):hover {
+            color: var(--bg-main-one);
+        }
+        .btn-content:nth-child(2)::before {
+            background: var(--bg-main-two);
+        }
+        .btn-content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--bg-main-one);
+            z-index: -1;
+            transition: 0.5s;
+        }
+        .btn-content:hover::before {
+            width: 100%;
+        }
+    }
+}
+
+.user-wrapper {
+    position: absolute;
+    top: 20%;
+    right: 15%;
+    .img-wrapper {
+        width: 100%;
+    }
+    .img-animate {
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 0;
+        padding-top: 100%;
+    }
+    .img-animate::after {
+        content: "";
+        position: absolute;
+        top: 165%;
+        left: 150px;
+        transform: translate(-50%, -50%);
+        width: 175%;
+        height: 175%;
+        background: radial-gradient(#075f83, #05445e);
+        animation: animate 5s ease-in-out infinite;
+        transition: all 1sn ease-in-out;
+    }
+
+    @keyframes animate {
+        0% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        50% {
+            border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+        }
+        75% {
+            border-radius: 50% 35% 40% 50% / 70% 55% 45% 25%;
+        }
+        100% {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+    }
+    .img-box {
+        position: relative;
+        z-index: 1;
+    }
+}
