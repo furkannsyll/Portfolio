@@ -246,11 +246,11 @@ section {
         width: 175%;
         height: 175%;
         background: radial-gradient(#075f83, #05445e);
-        animation: animate 5s ease-in-out infinite;
+        animation: bubble 5s ease-in-out infinite;
         transition: all 1sn ease-in-out;
     }
 
-    @keyframes animate {
+    @keyframes bubble {
         0% {
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
